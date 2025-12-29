@@ -14,6 +14,12 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private AnimationCurve _jumpCurve;
     [SerializeField] private AnimationCurve _fallCurve;
 
+    [Header("Component")]
+    [SerializeField] private Animator _animator;
+
+    private const string Jump_Parameter = "IsJumping";
+    private const string Grounded_Parameter = "Grounded";
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
@@ -29,6 +35,8 @@ public class PlayerMovementController : MonoBehaviour
 
     private IEnumerator JumpCoroutine()
     {
+        _animator.SetBool(Jump_Parameter, true);
+
         float halfJumpDuration = _jumpDuration / 2f;
         float jumpTimer = 0f;
 
@@ -49,6 +57,8 @@ public class PlayerMovementController : MonoBehaviour
             yield return null;
         }
 
+        _animator.SetBool(Jump_Parameter, false);
+
         // Fall logic
         jumpTimer = 0f;
 
@@ -66,5 +76,7 @@ public class PlayerMovementController : MonoBehaviour
 
             yield return null;
         }
+
+        _animator.SetTrigger(Grounded_Parameter);
     }
 }
