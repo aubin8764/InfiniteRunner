@@ -45,6 +45,7 @@ public class ObstacleGenerator : MonoBehaviour
     {
         // Avoid generating the same chunk twice in a raw.
         var newChunkIndex = Random.Range(0, _chunkPrefabs.Length);
+
         if(_preventSameChunkGeneration)
         {
             for (int i = 0; i < 10; i++)
