@@ -16,17 +16,21 @@ public class PlayerMovementController : MonoBehaviour
 
     [Header("Slide Parameter")]
     [SerializeField] private float _slideDuration = 0.5f;
+    [SerializeField] private float _slideDownDuration = 0.6f;
     [SerializeField] private Transform[] _slideTargets;
 
     [Header("Component")]
     [SerializeField] private Animator _animator;
+    [SerializeField] PlayerCollisionController collisionController;
 
     [Header("Debug")]
     [SerializeField] private bool _isJumping;
     [SerializeField] private bool _isSliding;
+    [SerializeField] private bool _isSlidingDown;
     [SerializeField] private int _currentLaneIndex =1;
 
     private const string Jump_Parameter = "IsJumping";
+    private const string Slide_Down_Parameter = "IsSlidingDown";
     private const string Grounded_Parameter = "Grounded";
 
     private void Update()
@@ -67,6 +71,16 @@ public class PlayerMovementController : MonoBehaviour
             _currentLaneIndex++;
 
             StartCoroutine(SlideCoroutine(_slideTargets[_currentLaneIndex]));
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            if (_isSlidingDown || _isJumping)
+            {
+                return;
+            }
+
+            StartCoroutine(SlideDownCoroutine());
         }
     }
 
@@ -148,5 +162,24 @@ public class PlayerMovementController : MonoBehaviour
             yield return null;
         }
         _isSliding = false;
+    }
+
+    private IEnumerator SlideDownCoroutine()
+    {
+        var slideTimer = 0f;
+
+        _isSlidingDown = true;
+        _animator.SetBool(Slide_Down_Parameter, true);
+        collisionController.ShrinkCollider(true);
+
+        while(slideTimer < _slideDownDuration)
+        {
+            slideTimer += Time.deltaTime;
+            yield return null;
+        }
+
+        collisionController.ShrinkCollider(false);
+        _animator.SetBool(Slide_Down_Parameter, false);
+        _isSlidingDown = false;
     }
 }

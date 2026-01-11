@@ -434,7 +434,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a663b5ff49fd14194e0d8bd37b051e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCollisionController
-  _sphereCenter: {x: 0, y: 0.32, z: 0}
+  _sphereStandCenter: {x: 0, y: 0, z: 0}
+  _sphereStandRadius: 0
+  _sphereShrinkCenter: {x: 0, y: 0.25, z: 0}
+  _sphereShrinkRadius: 0.25
+  _isHit: 0
+  _sphereCenter: {x: 0, y: 0.35, z: 0}
   _sphereRadius: 0.35
 --- !u!1 &712980751
 GameObject:
@@ -639,6 +644,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 320653325071680100, guid: d5a680ec93d7fb14496643f1d37eacda, type: 3}
+      propertyPath: _isSlidingDown
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 320653325071680100, guid: d5a680ec93d7fb14496643f1d37eacda, type: 3}
+      propertyPath: _slideDownDuration
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 320653325071680100, guid: d5a680ec93d7fb14496643f1d37eacda, type: 3}
+      propertyPath: collisionController
+      value: 
+      objectReference: {fileID: 684774233}
     - target: {fileID: 320653325071680100, guid: d5a680ec93d7fb14496643f1d37eacda, type: 3}
       propertyPath: _slideTargets.Array.size
       value: 3
