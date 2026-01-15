@@ -29,6 +29,8 @@ public class PlayerCollisionController : MonoBehaviour
         if(hitCount > 0 && !_isHit)
         {
             Debug.Log("Player take damage");
+
+            GameEventSystem.OnCollision?.Invoke();
             _isHit = true;
         }
         // Reset is hit flag when no collision is detected.
