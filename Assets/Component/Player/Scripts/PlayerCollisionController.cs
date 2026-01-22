@@ -30,7 +30,7 @@ public class PlayerCollisionController : MonoBehaviour
         {
             Debug.Log("Player take damage");
 
-            GameEventSystem.OnCollision?.Invoke();
+            GameEventService.OnCollision?.Invoke();
             _isHit = true;
         }
         // Reset is hit flag when no collision is detected.
