@@ -3,6 +3,10 @@ using Component.SceneLoader;
 
 public class UIMainMenuController : MonoBehaviour
 {
+    private void Start()
+    {
+        SaveService.Save();
+    }
     public void PlayGame()
     {
         // Load Scenes
