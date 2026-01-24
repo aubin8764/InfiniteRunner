@@ -5,7 +5,10 @@ public class UIMainMenuController : MonoBehaviour
 {
     private void Start()
     {
-        SaveService.Save();
+        var save = new SaveData();
+        save.PlayerName = "Player";
+
+        SaveService.Save(save);
     }
     public void PlayGame()
     {
