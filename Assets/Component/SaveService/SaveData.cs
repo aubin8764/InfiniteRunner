@@ -4,4 +4,5 @@ using System;
 public class SaveData
 {
     public string PlayerName;
+    public int RunCount;
 }

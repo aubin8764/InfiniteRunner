@@ -470,7 +470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221f785004ad9524aa8241d757d82eea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleGenerator
-  _translationSpeed: 5
+  _translationSpeed: 6
   _activeChunksCount: 5
   _behindChunksCount: 1
   _preventSameChunkGeneration: 1
