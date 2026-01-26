@@ -1,3 +1,4 @@
+using Component.Data;
 using UnityEngine;
 
 namespace Component.StateMachine
@@ -6,7 +7,7 @@ namespace Component.StateMachine
     {
         private float _countdownTimer;
 
-        public CountdownState(StateMachine stateMachine) : base(stateMachine) { }
+        public CountdownState(StateMachine stateMachine, SOLevelParameters levelParameters) : base(stateMachine, levelParameters) { }
 
 
         public override void Enter()
@@ -24,7 +25,7 @@ namespace Component.StateMachine
                 return;
             }
 
-            StateMachine.ChangeState(new GameState(StateMachine));
+            StateMachine.ChangeState(new GameState(StateMachine, LevelParameters));
         }
 
         public override void Exit()

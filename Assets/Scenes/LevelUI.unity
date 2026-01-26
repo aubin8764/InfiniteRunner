@@ -720,6 +720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c91fc1a21d1609a49ad30637318db3a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeController
+  _levelParameters: {fileID: 11400000, guid: 08745269530e4c248891b44c279badfa, type: 2}
   _lifeText: {fileID: 1162411423}
 --- !u!1 &1617625164
 GameObject:

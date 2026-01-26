@@ -1,10 +1,11 @@
+using Component.Data;
 using UnityEngine;
 
 namespace Component.StateMachine
 {
     public class GameOverState : State
     {
-        public GameOverState(StateMachine stateMachine) : base(stateMachine)
+        public GameOverState(StateMachine stateMachine, SOLevelParameters levelParameters) : base(stateMachine, levelParameters)
         {
         }
 
