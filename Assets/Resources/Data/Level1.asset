@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e629e23f880e1e24a928ec353d03c1e2, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: Assembly-CSharp::Component.Data.SOLevelParameters
+  _playerLife: 3
+  _speed: 3

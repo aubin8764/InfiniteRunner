@@ -8,8 +8,12 @@ namespace Component.SODB
     {
         private static readonly Dictionary<string, SOLevelParameters> DATABASE = new();
 
-        static ScriptableObjectDataBase()
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void Initialize()
         {
+            Debug.Log("Initializing ScriptableObjectDataBase...");
+            
+            DATABASE.Clear();
             var scriptableObjects = Resources.LoadAll<SOLevelParameters>("Data");
 
             foreach (var scriptableObject in scriptableObjects)

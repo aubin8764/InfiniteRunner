@@ -9,8 +9,14 @@ public class UILifeController : MonoBehaviour
 
     private void Start()
     {
-        var parameters = ScriptableObjectDataBase.GetByName("Level1");
-        
+        int levelIndex = 1;
+        if (!SaveService.TryLoad(out SaveData saveData))
+        {
+            levelIndex = saveData.LevelIndex;
+        }
+
+        var parameters = ScriptableObjectDataBase.GetByName("Level" + levelIndex);
+
         SetLife(parameters.PlayerLife);
         GameEventService.OnPlayerLifeUpdated += SetLife;
     }

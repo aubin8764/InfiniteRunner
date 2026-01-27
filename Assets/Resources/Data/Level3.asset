@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e629e23f880e1e24a928ec353d03c1e2, type: 3}
-  m_Name: Level2
+  m_Name: Level3
   m_EditorClassIdentifier: Assembly-CSharp::Component.Data.SOLevelParameters
-  _playerLife: 2
-  _speed: 10
+  _playerLife: 10
+  _speed: 20

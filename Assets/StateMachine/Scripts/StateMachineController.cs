@@ -9,7 +9,13 @@ namespace Component.StateMachine
 
         private void Start()
         {
-            var parameters = ScriptableObjectDataBase.GetByName("Level1");
+            int levelIndex = 1;
+            if(SaveService.TryLoad(out SaveData saveData))
+            {
+                levelIndex = saveData.LevelIndex;
+            }
+
+            var parameters = ScriptableObjectDataBase.GetByName("Level" + levelIndex);
 
             _stateMachine = new StateMachine();
             var initialState = new CountdownState(_stateMachine, parameters);
