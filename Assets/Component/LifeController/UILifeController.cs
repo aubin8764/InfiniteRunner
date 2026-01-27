@@ -1,16 +1,17 @@
-using UnityEngine;
+using Component.SODB;
 using TMPro;
-using Component.Data;
+using UnityEngine;
 
 public class UILifeController : MonoBehaviour
 {
-    [SerializeField] private SOLevelParameters _levelParameters;
     [Header("UI References")]
     [SerializeField] private TMP_Text _lifeText;
 
     private void Start()
     {
-        SetLife(_levelParameters.PlayerLife);
+        var parameters = ScriptableObjectDataBase.GetByName("Level1");
+        
+        SetLife(parameters.PlayerLife);
         GameEventService.OnPlayerLifeUpdated += SetLife;
     }
 

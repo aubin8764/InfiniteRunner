@@ -1,17 +1,18 @@
-using Component.Data;
+using Component.SODB;
 using UnityEngine;
 
 namespace Component.StateMachine
 {
     public class StateMachineController : MonoBehaviour
     {
-        [SerializeField] private SOLevelParameters _levelParameters;
         private StateMachine _stateMachine;
 
         private void Start()
         {
+            var parameters = ScriptableObjectDataBase.GetByName("Level1");
+
             _stateMachine = new StateMachine();
-            var initialState = new CountdownState(_stateMachine, _levelParameters);
+            var initialState = new CountdownState(_stateMachine, parameters);
 
             _stateMachine.ChangeState(initialState);
         }
