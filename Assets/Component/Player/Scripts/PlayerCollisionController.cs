@@ -28,9 +28,18 @@ public class PlayerCollisionController : MonoBehaviour
 
         if(hitCount > 0 && !_isHit)
         {
+            if (_hitResults[0].transform.CompareTag("Collectible"))
+            {
+                GameEventService.OnCollectiblePicked?.Invoke();
+                Destroy(_hitResults[0].gameObject);
+            }
+            else
+            {
+                GameEventService.OnCollision?.Invoke();
+            }
+
             Debug.Log("Player take damage");
 
-            GameEventService.OnCollision?.Invoke();
             _isHit = true;
         }
         // Reset is hit flag when no collision is detected.

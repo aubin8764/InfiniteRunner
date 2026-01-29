@@ -10,7 +10,7 @@ public class UILifeController : MonoBehaviour
     private void Start()
     {
         int levelIndex = 1;
-        if (!SaveService.TryLoad(out SaveData saveData))
+        if (SaveService.TryLoad(out SaveData saveData))
         {
             levelIndex = saveData.LevelIndex;
         }

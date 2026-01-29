@@ -2,9 +2,14 @@ using System;
 
 public static class GameEventService
 {
-    public static Action OnCollision;
+    #region GAMEPLAY
+
+    public static Action OnCollision; 
+    public static Action OnCollectiblePicked;
     public static Action<int> OnPlayerLifeUpdated;
     public static Action<float> OnCountdownTick;
+
+    #endregion
 
     public static Action<int> OnScoreUpdated;
     

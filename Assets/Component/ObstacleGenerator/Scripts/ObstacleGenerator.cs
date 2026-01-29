@@ -9,7 +9,7 @@ using UnityEngine;
 public class ObstacleGenerator : MonoBehaviour
 {
     [Header("Parameters")]
-    [SerializeField, Tooltip("Translation in m/s")] private float _translationSpeed = 1f;
+    [SerializeField, Tooltip("Translation in m/s")] private float _translationSpeed = 0f;
     [SerializeField] private int _activeChunksCount = 5;
     [SerializeField] private int _behindChunksCount = 2;
     [SerializeField] private bool _preventSameChunkGeneration = true;

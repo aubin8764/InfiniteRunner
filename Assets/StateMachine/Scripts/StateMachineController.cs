@@ -1,3 +1,4 @@
+using Component.Data;
 using Component.SODB;
 using UnityEngine;
 
