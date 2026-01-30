@@ -20,7 +20,10 @@ public class ChunkController : MonoBehaviour
             bool randomSpawnChance = Random.Range(0, 100) <= _spawnChance;
             if (randomSpawnChance)
             {
-                Instantiate(_collectible, _spawnPoint);
+                for (var i = 0; i < _collectible.Count; i++)
+                {
+                    Instantiate(_collectible[1], _spawnPoint);
+                }
             }
         }
     }
