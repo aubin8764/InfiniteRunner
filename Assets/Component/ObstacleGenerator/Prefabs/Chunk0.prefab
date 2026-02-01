@@ -355,3 +355,4 @@ MonoBehaviour:
   _distanceColorChange: 100
   _colorFragment: {fileID: 6892495220587047480, guid: 8e5e63973245b1e408be94abf57050c0, type: 3}
   _spawnPointColorFragment: {fileID: 7594124724682559416}
+  material: {fileID: 11400000, guid: 4f2f8e557422c2e4394ade2b6a456486, type: 2}

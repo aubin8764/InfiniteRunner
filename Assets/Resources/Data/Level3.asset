@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Component.Data.SOLevelParameters
   _playerLife: 10
   _speed: 20
+  _colorLevel: {fileID: 2100000, guid: 91a00b8d7b59c2544b22e7cc01774636, type: 2}

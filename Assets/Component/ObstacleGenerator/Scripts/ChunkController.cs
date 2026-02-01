@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Component.Data;
 
 public class ChunkController : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class ChunkController : MonoBehaviour
     [SerializeField] private GameObject _colorFragment;
     [SerializeField] private Transform _spawnPointColorFragment;
     private ChunkController chunkController;
+
+    private SOLevelParameters _colorLevel;
+
+    [SerializeField] private SOLevelParameters material;
 
     public Transform EndAnchor => _endAnchor;
 
@@ -34,13 +39,17 @@ public class ChunkController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void Update()
     {
         if (scoreController._score == _distanceColorChange)
         {
             Instantiate(_colorFragment, _spawnPointColorFragment);
-            chunkController.GetComponent<ChunkController>().material = _colorFragment;
-            Destroy(_colorFragment);
         }
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        chunkController.GetComponent<ChunkController>().material = _colorLevel;
+        Destroy(_colorFragment);
     }
 }

@@ -13,6 +13,6 @@ public class EnergyeSphere : MonoBehaviour
 
     private void HandleEnergyPicked()
     {
-        GameState.HandleCollectiblePicked();
+        //GameState.HandleCollectiblePicked();
     }
 }
