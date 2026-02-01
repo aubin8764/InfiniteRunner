@@ -6,7 +6,7 @@ public class ScoringController : MonoBehaviour
     [Header("Score Settings")]
     [SerializeField] private float _scoreMultiplier = 1f; // Ajuste la vitesse du score
 
-    private float _score = 0f;
+    public float _score = 0f;
 
     private void Update()
     {

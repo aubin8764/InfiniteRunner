@@ -679,6 +679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoringController
   _scoreMultiplier: 1
+  _score: 0
 --- !u!4 &967713064
 Transform:
   m_ObjectHideFlags: 0

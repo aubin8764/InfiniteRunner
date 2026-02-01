@@ -44,7 +44,7 @@ namespace Component.StateMachine
             }
         }
 
-        private void HandleCollectiblePicked()
+        public void HandleCollectiblePicked()
         {
             // Cannot exceed maximun life for the level.
             if(_currentLife == LevelParameters.PlayerLife)
