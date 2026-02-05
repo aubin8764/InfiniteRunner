@@ -28,9 +28,14 @@ public class PlayerCollisionController : MonoBehaviour
 
         if(hitCount > 0 && !_isHit)
         {
-            if (_hitResults[0].transform.CompareTag("Collectible"))
+            if (_hitResults[0].transform.CompareTag("Cristal"))
             {
-                GameEventService.OnCollectiblePicked?.Invoke();
+                GameEventService.OnCristalPicked?.Invoke();
+                Destroy(_hitResults[0].gameObject);
+            }
+            else if (_hitResults[0].transform.CompareTag("EnergySphere"))
+            {
+                GameEventService.OnEnergySpherePicked?.Invoke();
                 Destroy(_hitResults[0].gameObject);
             }
             else
