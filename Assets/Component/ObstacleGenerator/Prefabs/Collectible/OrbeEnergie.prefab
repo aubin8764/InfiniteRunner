@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2852215495832244631}
   m_Layer: 0
   m_Name: OrbeEnergie
-  m_TagString: Collectible
+  m_TagString: EnergySphere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

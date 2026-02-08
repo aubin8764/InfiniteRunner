@@ -21,6 +21,9 @@ public class ChunkController : MonoBehaviour
     //private ChunkController chunkController;
     //private SOLevelParameters _colorLevel;
 
+    [SerializeField]
+    private SOLevelParameters _parameters;
+
     public Transform EndAnchor => _endAnchor;
 
     public bool IsBehind => _endAnchor.position.z <= 0;
@@ -37,9 +40,7 @@ public class ChunkController : MonoBehaviour
             levelIndex = saveData.LevelIndex;
         }
 
-        SOLevelParameters parameters;
-
-        parameters = ScriptableObjectDataBase.Get<SOLevelParameters>("Level" + levelIndex);
+        SOLevelParameters parameters = _parameters;
 
         // Sécurités pour ne pas avoir d'erreur au GameOver.
         if (parameters == null)

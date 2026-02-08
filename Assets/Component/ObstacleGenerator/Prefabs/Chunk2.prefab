@@ -313,10 +313,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChunkController
   _endAnchor: {fileID: 3415416716711905012}
-  _collectible:
-  - {fileID: 5758063316428392198, guid: 08fdef8a09e66a441bdf723e2b2d4a37, type: 3}
-  - {fileID: 8253038229833568954, guid: c14a4dcd133f55c4babb3f3c12e3f4ea, type: 3}
-  _spawnPoints:
-  - {fileID: 3195593615123738242}
   _spawnPoint: {fileID: 3195593615123738242}
+  _obstacle: {fileID: 3195593615123738242}
+  _chunkMeshRenderer: {fileID: 0}
   _spawnChance: 10
+  _parameters: {fileID: 11400000, guid: 442dab261ffea2240b2bb2fec95e8880, type: 2}

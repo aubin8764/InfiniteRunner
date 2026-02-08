@@ -14,4 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Component.Data.SOLevelParameters
   _playerLife: 3
   _speed: 6
-  _colorLevel: {fileID: 2100000, guid: 64923a260cc349e4fbf67ffc87a0e5d5, type: 2}
+  _cristalPickedToLevelUp: 5
+  _cristalMaterials:
+  - {fileID: 2100000, guid: 6519e7eccb5c9e74fa4257818a134e18, type: 2}
+  _chunkMaterials: []
+  _cristalTemplate: {fileID: 0}
+  _cristalSpawnChance: 20
+  _energySphereTemplate: {fileID: 11400000, guid: b308fafd0e558cc4e99d35941466cda6, type: 2}
+  _energySphereSpawnChance: 39

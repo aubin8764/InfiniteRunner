@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Component.Data
 {
-    [CreateAssetMenu(menuName = "Data/CollectibleTemplate")]
+    [CreateAssetMenu(menuName = "Resources/CollectibleTemplate")]
     public class CollectibleTemplate : ScriptableObject
     {
         [SerializeField] private GameObject _collectiblePrefab;

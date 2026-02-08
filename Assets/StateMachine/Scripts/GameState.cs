@@ -17,6 +17,9 @@ namespace Component.StateMachine
         private float _endlessModeTimer;
         private float _currentSpeed;
 
+        [SerializeField]
+        private SOLevelParameters _parameters;
+
         public GameState(StateMachine stateMachine, SOLevelParameters levelParameters) : base(stateMachine, levelParameters)
         {
         }
@@ -94,7 +97,7 @@ namespace Component.StateMachine
 
             int nextLevel = saveData.LevelIndex + 1;
 
-            SOLevelParameters LevelParameters = ScriptableObjectDataBase.Get<SOLevelParameters>("Level" + saveData.LevelIndex);
+            SOLevelParameters parameters = _parameters;
 
             if (LevelParameters != null)
             {
