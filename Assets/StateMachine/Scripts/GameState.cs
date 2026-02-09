@@ -13,10 +13,6 @@ namespace Component.StateMachine
         private float _timeScore;
         private SOLevelParameters _currentLevelParameters;
 
-        private bool _isEndlessMode;
-        private float _endlessModeTimer;
-        private float _currentSpeed;
-
         [SerializeField]
         private SOLevelParameters _parameters;
 
@@ -38,7 +34,7 @@ namespace Component.StateMachine
 
         public override void Update()
         {
-            // noop
+            // Noop
         }
 
         public override void Exit()
@@ -67,7 +63,7 @@ namespace Component.StateMachine
 
             if(_currentLevelParameters.CristalPickedToLevelUp > 0)
             {
-                if(_cristalCount >= _currentLevelParameters.CristalPickedToLevelUp && !_isEndlessMode)
+                if(_cristalCount >= _currentLevelParameters.CristalPickedToLevelUp)
                 {
                     LevelUp();
                 }
@@ -106,7 +102,6 @@ namespace Component.StateMachine
 
                 _currentLevelParameters = LevelParameters;
                 _cristalCount = 0;
-                _isEndlessMode = false;
 
                 GameEventService.OnLevelParametersUpdated?.Invoke(LevelParameters);
                 GameEventService.OnCristalCountUpdate?.Invoke(_cristalCount);

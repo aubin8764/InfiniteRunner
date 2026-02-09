@@ -14,13 +14,6 @@ public class ChunkController : MonoBehaviour
     private Renderer _spawnCristalRenderer;
     [SerializeField, Range(0, 99)] private int _spawnChance;
 
-    //private ScoringController scoreController;
-    //[SerializeField] private float _distanceColorChange;
-    //[SerializeField] private GameObject _colorFragment;
-    //[SerializeField] private Transform _spawnPointColorFragment;
-    //private ChunkController chunkController;
-    //private SOLevelParameters _colorLevel;
-
     [SerializeField]
     private SOLevelParameters _parameters;
 
@@ -105,17 +98,3 @@ public class ChunkController : MonoBehaviour
         _chunkMeshRenderer.material = newChunkMaterial;
     }
 }
-
-    //private void Update()
-    //{
-    //    if (scoreController._score == _distanceColorChange)
-    //    {
-    //        Instantiate(_colorFragment, _spawnPointColorFragment);
-    //    }
-    //}
-
-    //private void OnTriggerEnter(Collider collision)
-    //{
-    //    chunkController.GetComponent<ChunkController>().material = _colorLevel;
-    //    Destroy(_colorFragment);
-    //}

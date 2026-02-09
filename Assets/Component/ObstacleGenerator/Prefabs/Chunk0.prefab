@@ -315,6 +315,6 @@ MonoBehaviour:
   _endAnchor: {fileID: 3415416716711905012}
   _spawnPoint: {fileID: 3230846104249881044}
   _obstacle: {fileID: 3230846104249881044}
-  _chunkMeshRenderer: {fileID: 0}
+  _chunkMeshRenderer: {fileID: 4490765096210793663}
   _spawnChance: 60
   _parameters: {fileID: 11400000, guid: 442dab261ffea2240b2bb2fec95e8880, type: 2}
