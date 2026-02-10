@@ -1,8 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Component.Data;
-using Component.SODB;
+using Components.SODataBase;
 using UnityEngine;
 
 public class ChunkController : MonoBehaviour
@@ -33,7 +31,10 @@ public class ChunkController : MonoBehaviour
             levelIndex = saveData.LevelIndex;
         }
 
-        SOLevelParameters parameters = _parameters;
+        SOLevelParameters parameters;
+
+
+        parameters = ScriptableObjectDataBase.Get<SOLevelParameters>("Level" + levelIndex);
 
         // Sécurités pour ne pas avoir d'erreur au GameOver.
         if (parameters == null)

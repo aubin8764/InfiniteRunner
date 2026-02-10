@@ -1,5 +1,5 @@
 using Component.Data;
-using Component.SODB;
+using Components.SODataBase;
 using UnityEngine;
 
 namespace Component.StateMachine
@@ -11,12 +11,15 @@ namespace Component.StateMachine
         private void Start()
         {
             int levelIndex = 1;
-            if(SaveService.TryLoad(out SaveData saveData))
+            if (SaveService.TryLoad(out SaveData saveData))
             {
                 levelIndex = saveData.LevelIndex;
             }
 
-            var parameters = ScriptableObjectDataBase.GetByName("Level" + levelIndex);
+            SOLevelParameters parameters;
+
+            parameters = ScriptableObjectDataBase.Get<SOLevelParameters>("Level" + levelIndex);
+
 
             _stateMachine = new StateMachine();
             var initialState = new CountdownState(_stateMachine, parameters);
@@ -24,6 +27,6 @@ namespace Component.StateMachine
             _stateMachine.ChangeState(initialState);
         }
 
-        public void Update() => _stateMachine.Update();
+            public void Update() => _stateMachine.Update();
+        }
     }
-}

@@ -1,8 +1,6 @@
-using System;
 using Component.Data;
-using Component.SODB;
+using Components.SODataBase;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 
 namespace Component.StateMachine
 {
@@ -12,9 +10,6 @@ namespace Component.StateMachine
         private int _cristalCount;
         private float _timeScore;
         private SOLevelParameters _currentLevelParameters;
-
-        [SerializeField]
-        private SOLevelParameters _parameters;
 
         public GameState(StateMachine stateMachine, SOLevelParameters levelParameters) : base(stateMachine, levelParameters)
         {
@@ -93,7 +88,7 @@ namespace Component.StateMachine
 
             int nextLevel = saveData.LevelIndex + 1;
 
-            SOLevelParameters parameters = _parameters;
+            SOLevelParameters LevelParameters = ScriptableObjectDataBase.Get<SOLevelParameters>("Level" + saveData.LevelIndex);
 
             if (LevelParameters != null)
             {

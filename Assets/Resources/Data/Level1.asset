@@ -22,4 +22,4 @@ MonoBehaviour:
   _cristalTemplate: {fileID: 11400000, guid: fe2f8a9cbfc61d2438465b6e182903dd, type: 2}
   _cristalSpawnChance: 50
   _energySphereTemplate: {fileID: 11400000, guid: b308fafd0e558cc4e99d35941466cda6, type: 2}
-  _energySphereSpawnChance: 30
+  _energySphereSpawnChance: 92

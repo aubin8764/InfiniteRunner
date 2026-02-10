@@ -1,5 +1,6 @@
 using System.Collections.Generic;
-using Component.SODB;
+using Component.Data;
+using Components.SODataBase;
 using UnityEngine;
 
 /// <summary>
@@ -31,7 +32,7 @@ public class ObstacleGenerator : MonoBehaviour
             levelIndex = saveData.LevelIndex;
         }
 
-        var parameters = ScriptableObjectDataBase.GetByName("Level" + levelIndex);
+        var parameters = ScriptableObjectDataBase.Get<SOLevelParameters>("Level" + levelIndex);
         _translationSpeed = parameters.Speed;
 
         AddBaseChunks();
