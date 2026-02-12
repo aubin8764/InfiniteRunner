@@ -1,5 +1,6 @@
 using Component.Data;
 using Components.SODataBase;
+using UnityEditor.Macros;
 using UnityEngine;
 
 namespace Component.StateMachine
@@ -30,6 +31,7 @@ namespace Component.StateMachine
         public override void Update()
         {
             // Noop
+            // Appelé la méthode de changement de couleur
         }
 
         public override void Exit()
@@ -53,14 +55,16 @@ namespace Component.StateMachine
 
         private void HandleCristalPicked()
         {
+            // Changé le script pour faire un changement de couleur du chunk lorsqu'on atteint un certain nombre de cristal recupérer (_cristalCount, private GameObject Chunk, if(_cristalCount = cristakPickedToChangeColor) { script de changement de couleur}
+
             _cristalCount++;
             GameEventService.OnCristalCountUpdate?.Invoke(_cristalCount);
 
-            if(_currentLevelParameters.CristalPickedToLevelUp > 0)
+            if (_currentLevelParameters.CristalPickedToChangeColor > 0)
             {
-                if(_cristalCount >= _currentLevelParameters.CristalPickedToLevelUp)
+                if (_cristalCount >= _currentLevelParameters.CristalPickedToChangeColor)
                 {
-                    LevelUp();
+                    ChangeColor();
                 }
             }
         }
@@ -68,7 +72,7 @@ namespace Component.StateMachine
         public void HandleEnergySpherePicked()
         {
             // Cannot exceed maximun life for the level.
-            if(_currentLife == LevelParameters.PlayerLife)
+            if (_currentLife == LevelParameters.PlayerLife)
             {
                 return;
             }
@@ -104,5 +108,13 @@ namespace Component.StateMachine
                 GameEventService.OnCristalColorUpdated?.Invoke(LevelParameters.GetRandomCristalMaterial());
             }
         }
+
+
+        private void ChangeColor()
+        {
+            
+        }
+
+        // private void (augmentation de la vitesse au fur et a mesur du temps et ajouté une limite maximun)
     }
 }

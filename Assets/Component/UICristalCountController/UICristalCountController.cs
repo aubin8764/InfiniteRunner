@@ -19,7 +19,7 @@ public class UICristalCountController : MonoBehaviour
         var parameters = ScriptableObjectDataBase.Get<SOLevelParameters>("Level" + levelIndex);
 
 
-            UpdateCristalCount(parameters.CristalPickedToLevelUp);
+            UpdateCristalCount(parameters.CristalPickedToChangeColor);
 
             GameEventService.OnCristalCountUpdate += UpdateCristalCount;
     }

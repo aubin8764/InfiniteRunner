@@ -8,7 +8,7 @@ namespace Component.Data
     {
         [SerializeField] private int _playerLife = 3;
         [SerializeField] private float _speed;
-        [SerializeField] private int _cristalPickedToLevelUp = 0;
+        [SerializeField] private int _cristalPickedToChangeColor = 0;
         [SerializeField] private List<Material> _cristalMaterials;
         [SerializeField] private List<Material> _chunkMaterials;
 
@@ -20,7 +20,7 @@ namespace Component.Data
 
         public int PlayerLife => _playerLife;
         public float Speed => _speed;
-        public int CristalPickedToLevelUp => _cristalPickedToLevelUp;
+        public int CristalPickedToChangeColor => _cristalPickedToChangeColor;
 
         public CollectibleTemplate CristalTemplate => _cristalTemplate;
         public int CristalSpawnChance => _cristalSpawnChance;
