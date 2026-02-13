@@ -60,9 +60,6 @@ public class ChunkController : MonoBehaviour
 
                 cristal.transform.position = _spawnPoint.position;
                 cristal.transform.SetParent(_obstacle.transform);
-
-                _spawnCristalRenderer = cristal.GetComponent<Renderer>();
-                _spawnCristalRenderer.material = parameters.GetRandomCristalMaterial();
             }
         }
 

@@ -9,7 +9,7 @@ namespace Component.Data
         [SerializeField] private int _playerLife = 3;
         [SerializeField] private float _speed;
         [SerializeField] private int _cristalPickedToChangeColor = 0;
-        [SerializeField] private List<Material> _cristalMaterials;
+        [SerializeField] private Material _cristalMaterials;
         [SerializeField] private List<Material> _chunkMaterials;
 
         [SerializeField] private CollectibleTemplate _cristalTemplate;
@@ -28,7 +28,7 @@ namespace Component.Data
         public CollectibleTemplate HeartTemplate => _energySphereTemplate;
         public int HeartSpawnChance => _energySphereSpawnChance;
 
-        public Material GetRandomCristalMaterial() => _cristalMaterials[Random.Range(0, _cristalMaterials.Count)];
+        public Material CristalMaterials => _cristalMaterials;
         public Material GetRandomChunkMaterial() => _chunkMaterials[Random.Range(0, _chunkMaterials.Count)];
     }
 }

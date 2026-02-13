@@ -1,6 +1,7 @@
 using Component.Data;
 using Components.SODataBase;
 using UnityEditor.Macros;
+using UnityEditor.Overlays;
 using UnityEngine;
 
 namespace Component.StateMachine
@@ -11,6 +12,7 @@ namespace Component.StateMachine
         private int _cristalCount;
         private float _timeScore;
         private SOLevelParameters _currentLevelParameters;
+        private int _cristalPickedToChangeColor;
 
         public GameState(StateMachine stateMachine, SOLevelParameters levelParameters) : base(stateMachine, levelParameters)
         {
@@ -26,6 +28,7 @@ namespace Component.StateMachine
             _cristalCount = 0;
             _timeScore = 0;
             _currentLife = LevelParameters.PlayerLife;
+            _cristalPickedToChangeColor = LevelParameters.CristalPickedToChangeColor;
         }
 
         public override void Update()
@@ -105,13 +108,23 @@ namespace Component.StateMachine
                 GameEventService.OnLevelParametersUpdated?.Invoke(LevelParameters);
                 GameEventService.OnCristalCountUpdate?.Invoke(_cristalCount);
                 GameEventService.OnChunkColorUpdated?.Invoke(LevelParameters.GetRandomChunkMaterial());
-                GameEventService.OnCristalColorUpdated?.Invoke(LevelParameters.GetRandomCristalMaterial());
             }
         }
 
 
         private void ChangeColor()
         {
+            if(_cristalCount > _cristalPickedToChangeColor)
+            {
+                return;
+            }
+            else
+            {
+                if (_cristalCount == _cristalPickedToChangeColor)
+                {
+                    // (ajouter la list des chunk = LevelParameters.CristalMaterials;
+                }
+            }
             
         }
 
