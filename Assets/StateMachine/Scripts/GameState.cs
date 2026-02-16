@@ -13,6 +13,7 @@ namespace Component.StateMachine
         private float _timeScore;
         private SOLevelParameters _currentLevelParameters;
         private int _cristalPickedToChangeColor;
+        private ChunkController[] _chunkPrefab;
 
         public GameState(StateMachine stateMachine, SOLevelParameters levelParameters) : base(stateMachine, levelParameters)
         {
@@ -122,7 +123,7 @@ namespace Component.StateMachine
             {
                 if (_cristalCount == _cristalPickedToChangeColor)
                 {
-                    // (ajouter la list des chunk = LevelParameters.CristalMaterials;
+                    _chunkPrefab.material = LevelParameters.CristalMaterials;
                 }
             }
             
