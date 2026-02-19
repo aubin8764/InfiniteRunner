@@ -133,9 +133,9 @@ GameObject:
   - component: {fileID: 7571314521012639915}
   - component: {fileID: 2369029130919682269}
   - component: {fileID: 2294781864728691426}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

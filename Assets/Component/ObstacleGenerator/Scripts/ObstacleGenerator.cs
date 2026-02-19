@@ -37,11 +37,15 @@ public class ObstacleGenerator : MonoBehaviour
 
         AddBaseChunks();
         GameEventService.OnGameState += HandleGameState;
+        GameEventService.OnObstacleColorChange += ChangeObstaclesMaterial;
+
     }
 
     private void OnDestroy()
     {
         GameEventService.OnGameState -= HandleGameState;
+        GameEventService.OnObstacleColorChange -= ChangeObstaclesMaterial;
+
     }
 
     private void HandleGameState(bool enterState)
@@ -130,5 +134,38 @@ public class ObstacleGenerator : MonoBehaviour
         {
             AddChunk(LastChunk.EndAnchor.position);
         }
+    }
+
+    //  NOUVELLE MÉTHODE : Change la couleur des obstacles
+    /// <summary>
+    /// Change le matériau de tous les obstacles enfants dans tous les chunks actifs
+    /// </summary>
+    /// <param name="newMaterial">Le nouveau matériau à appliquer</param>
+    public void ChangeObstaclesMaterial(Material newMaterial)
+    {
+        if (newMaterial == null)
+        {
+            Debug.LogError(" Le matériau fourni est null !");
+            return;
+        }
+
+        int rendererCount = 0;
+
+        foreach (ChunkController chunk in _activeChunks)
+        {
+            // Récupérer tous les Renderer dans les enfants du chunk
+            Renderer[] renderers = chunk.GetComponentsInChildren<Renderer>();
+
+            foreach (Renderer renderer in renderers)
+            {
+                if (renderer.CompareTag("Obstacle"))
+                {
+                    renderer.material = newMaterial;
+                    rendererCount++;
+                }
+            }
+        }
+
+        Debug.Log($" Couleur des obstacles changée ! {_activeChunks.Count} chunks actifs, {rendererCount} renderers affectés.");
     }
 }

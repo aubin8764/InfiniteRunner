@@ -12,6 +12,9 @@ public static class GameEventService
     public static Action<int> OnPlayerLifeUpdated;
     public static Action<float> OnCountdownTick;
 
+    public static Action<int, Material> OnCristalCollected;
+    public static Action<Material> OnObstacleColorChange;
+
     public static Action<Material> OnChunkColorUpdated;
     public static Action<Material> OnCristalColorUpdated;
 

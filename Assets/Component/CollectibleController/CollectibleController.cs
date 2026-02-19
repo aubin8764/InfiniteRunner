@@ -13,7 +13,7 @@ public class CollectibleController : MonoBehaviour
         if (player != null)
         {
             Debug.Log("Joueur detecté par le cristal, destruction du cristal");
-            // Détruit le cristal
+            // Détruit le collectible
             Destroy(gameObject);
         }
     }

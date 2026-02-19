@@ -485,6 +485,31 @@ MonoBehaviour:
   _isHit: 0
   _sphereCenter: {x: 0, y: 0.35, z: 0}
   _sphereRadius: 0.35
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &684774236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684774230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf38fc041058df4a91a70584d6b3680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  _sphereStandCenter: {x: 0, y: 0, z: 0}
+  _sphereStandRadius: 0
+  _sphereShrinkCenter: {x: 0, y: 0.25, z: 0}
+  _sphereShrinkRadius: 0.25
+  _isHit: 0
+  _sphereCenter: {x: 0, y: 0, z: 0}
+  _sphereRadius: 0.35
+  collectibleMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &712980751
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,6 +521,7 @@ GameObject:
   - component: {fileID: 712980753}
   - component: {fileID: 712980752}
   - component: {fileID: 712980754}
+  - component: {fileID: 712980755}
   m_Layer: 0
   m_Name: ObstacleGenerator
   m_TagString: Untagged
@@ -517,7 +543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleGenerator
   _translationSpeed: 0
   _activeChunksCount: 10
-  _behindChunksCount: 1
+  _behindChunksCount: 2
   _preventSameChunkGeneration: 1
   _chunkPrefabs:
   - {fileID: 3955985807928753493, guid: cbe28da7e34b48543ad29b238f2da153, type: 3}
@@ -551,6 +577,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4771a916829342741b1549b0674c5392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectibleController
+--- !u!114 &712980755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712980751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d90912a87ae7146900711fc8d17b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CristalColorChanger
+  _cristalsRequiredForChange: 1
+  _showDebugLogs: 1
 --- !u!1 &729510943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,6 +1045,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2189611773272208213, guid: d5a680ec93d7fb14496643f1d37eacda, type: 3}
       insertIndex: -1
       addedObject: {fileID: 684774233}
+    - targetCorrespondingSourceObject: {fileID: 2189611773272208213, guid: d5a680ec93d7fb14496643f1d37eacda, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 684774236}
   m_SourcePrefab: {fileID: 100100000, guid: d5a680ec93d7fb14496643f1d37eacda, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

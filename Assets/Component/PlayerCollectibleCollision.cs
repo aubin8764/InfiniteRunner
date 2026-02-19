@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerCollisionController : MonoBehaviour
+public class PlayerCollectibleCollision : MonoBehaviour
 {
     [Header("Sphere Parameters")]
     [SerializeField] private Vector3 _sphereStandCenter;
@@ -16,7 +16,7 @@ public class PlayerCollisionController : MonoBehaviour
 
     private readonly Collider[] _hitResults = new Collider[1];
 
-    [SerializeField] private LayerMask layerMask;
+    [SerializeField] private LayerMask collectibleMask;
 
     private void Start()
     {
@@ -26,9 +26,9 @@ public class PlayerCollisionController : MonoBehaviour
 
     private void Update()
     {
-        var hitCount = Physics.OverlapSphereNonAlloc(transform.position + _sphereCenter, _sphereRadius, _hitResults, layerMask);
+        var hitCollectibleCount = Physics.OverlapSphereNonAlloc(transform.position + _sphereCenter, _sphereRadius, _hitResults, collectibleMask);
 
-        if(hitCount > 0 && !_isHit)
+        if (hitCollectibleCount > 0 && !_isHit)
         {
             if (_hitResults[0].transform.CompareTag("Cristal"))
             {
@@ -50,7 +50,7 @@ public class PlayerCollisionController : MonoBehaviour
             _isHit = true;
         }
         // Reset is hit flag when no collision is detected.
-        else if(hitCount == 0)
+        else if (hitCollectibleCount == 0)
         {
             _isHit = false;
         }
@@ -71,7 +71,7 @@ public class PlayerCollisionController : MonoBehaviour
         }
         else
         {
-            _sphereCenter = _sphereStandCenter; 
+            _sphereCenter = _sphereStandCenter;
             _sphereRadius = _sphereStandRadius;
         }
     }

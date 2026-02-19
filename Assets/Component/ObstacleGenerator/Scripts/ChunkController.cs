@@ -6,7 +6,8 @@ using UnityEngine;
 public class ChunkController : MonoBehaviour
 {
     [SerializeField] private Transform _endAnchor;
-    [SerializeField] private Transform _spawnPoint;
+    [SerializeField] private Transform _cristalSpawnPoint;
+    [SerializeField] private Transform _heartSpawnPoint;
     [SerializeField] private Transform _obstacle;
     [SerializeField] private MeshRenderer _chunkMeshRenderer;
     private Renderer _spawnCristalRenderer;
@@ -58,7 +59,7 @@ public class ChunkController : MonoBehaviour
                 CollectibleTemplate template = parameters.CristalTemplate;
                 GameObject cristal = CollectibleCreator.Create(template);
 
-                cristal.transform.position = _spawnPoint.position;
+                cristal.transform.position = _cristalSpawnPoint.position;
                 cristal.transform.SetParent(_obstacle.transform);
             }
         }
@@ -72,7 +73,7 @@ public class ChunkController : MonoBehaviour
                 CollectibleTemplate template = parameters.HeartTemplate;
                 GameObject heart = CollectibleCreator.Create(template);
 
-                heart.transform.position = _spawnPoint.position;
+                heart.transform.position = _heartSpawnPoint.position;
                 heart.transform.SetParent(_obstacle.transform);
             }
         }

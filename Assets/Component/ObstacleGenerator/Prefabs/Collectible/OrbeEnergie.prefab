@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1640882125208581232}
   - component: {fileID: 2498700746544262557}
   - component: {fileID: 2852215495832244631}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OrbeEnergie
   m_TagString: EnergySphere
   m_Icon: {fileID: 0}

@@ -1,5 +1,6 @@
 using Component.Data;
 using Components.SODataBase;
+using NUnit.Framework;
 using UnityEditor.Macros;
 using UnityEditor.Overlays;
 using UnityEngine;
@@ -10,7 +11,7 @@ namespace Component.StateMachine
     {
         private int _currentLife;
         private int _cristalCount;
-        private float _timeScore;
+        //private float _timeScore;
         private SOLevelParameters _currentLevelParameters;
         private int _cristalPickedToChangeColor;
         private ChunkController[] _chunkPrefab;
@@ -27,7 +28,7 @@ namespace Component.StateMachine
             GameEventService.OnCristalPicked += HandleCristalPicked;
             GameEventService.OnEnergySpherePicked += HandleEnergySpherePicked;
             _cristalCount = 0;
-            _timeScore = 0;
+            //_timeScore = 0;
             _currentLife = LevelParameters.PlayerLife;
             _cristalPickedToChangeColor = LevelParameters.CristalPickedToChangeColor;
         }
@@ -64,13 +65,13 @@ namespace Component.StateMachine
             _cristalCount++;
             GameEventService.OnCristalCountUpdate?.Invoke(_cristalCount);
 
-            if (_currentLevelParameters.CristalPickedToChangeColor > 0)
+            /*if (_currentLevelParameters.CristalPickedToChangeColor > 0)
             {
                 if (_cristalCount >= _currentLevelParameters.CristalPickedToChangeColor)
                 {
-                    ChangeColor();
+                    //ChangeColor();
                 }
-            }
+            }*/
         }
 
         public void HandleEnergySpherePicked()
@@ -111,23 +112,31 @@ namespace Component.StateMachine
                 GameEventService.OnChunkColorUpdated?.Invoke(LevelParameters.GetRandomChunkMaterial());
             }
         }
-
-
-        private void ChangeColor()
+        /*private void ChangeColor()
         {
-            if(_cristalCount > _cristalPickedToChangeColor)
+            if (_cristalCount < _cristalPickedToChangeColor)
             {
                 return;
             }
-            else
+
+            if (_cristalCount == _cristalPickedToChangeColor)
             {
-                if (_cristalCount == _cristalPickedToChangeColor)
+                // Récupérer le matériau du cristal dans la scène
+                Material cristalMaterial = LevelParameters.CristalMaterials;
+
+                // Méthode 1 : Via Singleton (recommandé) Fait attention 
+                foreach (GameObject chunk in ObstacleGenerator.Instance.activeChunks)
                 {
-                    _chunkPrefab.material = LevelParameters.CristalMaterials;
+                    // Récupérer le Renderer du chunk
+                    Renderer chunkRenderer = chunk.GetComponent<Renderer>();
+
+                    if (chunkRenderer != null)
+                    {
+                        chunkRenderer.material = cristalMaterial;
+                    }
                 }
             }
-            
-        }
+        }*/
 
         // private void (augmentation de la vitesse au fur et a mesur du temps et ajouté une limite maximun)
     }
