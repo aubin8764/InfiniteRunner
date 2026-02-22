@@ -298,6 +298,7 @@ Transform:
   - {fileID: 9190870492568396249}
   - {fileID: 3415416716711905012}
   - {fileID: 1765549357951032346}
+  - {fileID: 28938143970422386}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3955985807928753493
@@ -313,8 +314,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChunkController
   _endAnchor: {fileID: 3415416716711905012}
-  _spawnPoint: {fileID: 1765549357951032346}
+  _cristalSpawnPoint: {fileID: 1765549357951032346}
+  _heartSpawnPoint: {fileID: 28938143970422386}
   _obstacle: {fileID: 1765549357951032346}
-  _chunkMeshRenderer: {fileID: 0}
-  _spawnChance: 25
+  _chunkMeshRenderer: {fileID: 2369029130919682269}
   _parameters: {fileID: 11400000, guid: 442dab261ffea2240b2bb2fec95e8880, type: 2}
+--- !u!1 &8545905583992997993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 28938143970422386}
+  m_Layer: 0
+  m_Name: CollectibleHolder (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &28938143970422386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545905583992997993}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.5, y: 8.48, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 339957169220718867}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

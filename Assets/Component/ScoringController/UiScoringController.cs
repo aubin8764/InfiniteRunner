@@ -4,7 +4,7 @@ using UnityEngine;
 public class UiScoringController : MonoBehaviour
 {
     [SerializeField] private TMP_Text _timeScoreText;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         GameEventService.OnTimeScoreUpdated += UpdateTimeScore;

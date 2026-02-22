@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3362591484217341129}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0.5, z: 5}
+  m_LocalPosition: {x: 19.2, y: 5.64, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -313,8 +313,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChunkController
   _endAnchor: {fileID: 3415416716711905012}
-  _spawnPoint: {fileID: 3195593615123738242}
+  _cristalSpawnPoint: {fileID: 3195593615123738242}
+  _heartSpawnPoint: {fileID: 3195593615123738242}
   _obstacle: {fileID: 3195593615123738242}
-  _chunkMeshRenderer: {fileID: 0}
-  _spawnChance: 10
+  _chunkMeshRenderer: {fileID: 2369029130919682269}
   _parameters: {fileID: 11400000, guid: 442dab261ffea2240b2bb2fec95e8880, type: 2}

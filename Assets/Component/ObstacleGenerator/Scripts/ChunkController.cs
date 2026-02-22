@@ -1,4 +1,3 @@
-using System;
 using Component.Data;
 using Components.SODataBase;
 using UnityEngine;
@@ -11,7 +10,6 @@ public class ChunkController : MonoBehaviour
     [SerializeField] private Transform _obstacle;
     [SerializeField] private MeshRenderer _chunkMeshRenderer;
     private Renderer _spawnCristalRenderer;
-    [SerializeField, Range(0, 99)] private int _spawnChance;
 
     [SerializeField]
     private SOLevelParameters _parameters;
@@ -22,8 +20,8 @@ public class ChunkController : MonoBehaviour
 
     private void Start()
     {
-        GameEventService.OnChunkColorUpdated += HandleChunkColorUpdated;
         GameEventService.OnCristalColorUpdated += HandleCristalColorUpdated;
+        GameEventService.OnChunkMaterialChanged += ChangeMaterial;
 
         int levelIndex = 1;
 
@@ -47,8 +45,7 @@ public class ChunkController : MonoBehaviour
             return;
         }
 
-        _chunkMeshRenderer.material = parameters.GetRandomChunkMaterial();
-
+        //Debug.Log("Instantie le collectible avec sa prefab de façon aléatoire");
 
         if (parameters.CristalSpawnChance != 0)
         {
@@ -81,19 +78,26 @@ public class ChunkController : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameEventService.OnChunkColorUpdated -= HandleChunkColorUpdated;
         GameEventService.OnCristalColorUpdated -= HandleCristalColorUpdated;
+        GameEventService.OnChunkMaterialChanged -= ChangeMaterial;
     }
 
-    private void HandleChunkColorUpdated(Material cristalMaterial)
-    {
-        if(_spawnCristalRenderer != null)
-        {
-            _spawnCristalRenderer.material = cristalMaterial;
-        }
-    }
     private void HandleCristalColorUpdated(Material newChunkMaterial)
     {
         _chunkMeshRenderer.material = newChunkMaterial;
+    }
+
+    private void ChangeMaterial(Material newMaterial)
+    {
+        //Debug.Log($"Chunk {gameObject.name} change de couleur vers {newMaterial.name}");
+
+        if (_chunkMeshRenderer != null)
+        {
+            _chunkMeshRenderer.material = newMaterial;
+        }
+        else
+        {
+            //Debug.LogWarning($"Chunk {gameObject.name} n’a pas de MeshRenderer assigné !");
+        }
     }
 }

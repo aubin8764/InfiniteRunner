@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -21,6 +20,7 @@ public class UICountdownController : MonoBehaviour
 
     private void HandleCountdownState(bool enterState)
     {
+        // Active le compte à rebourd
         _countdownPanel.SetActive(enterState);
     }
 

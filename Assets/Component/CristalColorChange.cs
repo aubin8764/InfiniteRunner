@@ -34,6 +34,7 @@ public class CristalColorChanges : MonoBehaviour
         //  Changement seulement quand le seuil est atteint
         if (_cristalCount >= _cristalsRequiredForChange)
         {
+            Debug.Log("Cristal count = cristal required for change");
             ChangeObstaclesColor(_pendingMaterial);
             _cristalCount = 0; // Reset pour le prochain changement
         }

@@ -33,11 +33,14 @@ public class PlayerCollectibleCollision : MonoBehaviour
             if (_hitResults[0].transform.CompareTag("Cristal"))
             {
                 GameEventService.OnCristalPicked?.Invoke();
+                //Debug.Log("oui");
                 Destroy(_hitResults[0].gameObject);
+
             }
             else if (_hitResults[0].transform.CompareTag("EnergySphere"))
             {
                 GameEventService.OnEnergySpherePicked?.Invoke();
+                //Debug.Log("non");
                 Destroy(_hitResults[0].gameObject);
             }
             else
@@ -45,7 +48,7 @@ public class PlayerCollectibleCollision : MonoBehaviour
                 GameEventService.OnCollision?.Invoke();
             }
 
-            Debug.Log("Player take damage");
+            //Debug.Log("Player take damage");
 
             _isHit = true;
         }

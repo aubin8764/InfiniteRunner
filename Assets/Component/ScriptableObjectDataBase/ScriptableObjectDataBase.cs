@@ -13,7 +13,7 @@ namespace Components.SODataBase
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void initialize()
         {
-            Debug.Log("Initializing ScriptableObjectDataBase...");
+            //Debug.Log("Initializing ScriptableObjectDataBase...");
 
             SO_DATABASE.Clear();
             Register<SOLevelParameters>();
@@ -26,7 +26,7 @@ namespace Components.SODataBase
 
             if (SO_DATABASE.ContainsKey(type))
             {
-                Debug.LogWarning($"ScriptableObject with name {type.Name} already exists in database.");
+                //Debug.LogWarning($"ScriptableObject with name {type.Name} already exists in database.");
                 return;
             }
 
@@ -39,7 +39,7 @@ namespace Components.SODataBase
                 SO_DATABASE[type][template.name] = template;
             }
 
-            Debug.Log($"[DATABASE] Loaded {templates.Length} {type.Name}(s)");
+            //Debug.Log($"[DATABASE] Loaded {templates.Length} {type.Name}(s)");
         }
 
         public static T Get<T>(string name) where T : ScriptableObject

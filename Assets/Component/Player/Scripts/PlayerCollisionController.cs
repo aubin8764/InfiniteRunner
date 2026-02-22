@@ -45,7 +45,7 @@ public class PlayerCollisionController : MonoBehaviour
                 GameEventService.OnCollision?.Invoke();
             }
 
-            Debug.Log("Player take damage");
+            //Debug.Log("Player take damage");
 
             _isHit = true;
         }

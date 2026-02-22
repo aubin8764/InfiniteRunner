@@ -1,4 +1,3 @@
-using Component.Data;
 using UnityEngine;
 
 public class Cristallect : CollectibleBase
@@ -8,8 +7,10 @@ public class Cristallect : CollectibleBase
 
     protected override void OnCollect()
     {
+        //Debug.Log("éxécuté si cristal entre en collision avec le player");
         Material mat = _renderer.material;
-        Debug.Log($"Cristal collecté ! Valeur : {_value}, Matériau : {mat.name}");
+        //Debug.Log($"Cristal collecté ! Valeur : {_value}, Matériau : {mat.name}");
         GameEventService.OnCristalCollected?.Invoke(_value, mat);
+        
     }
 }

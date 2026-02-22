@@ -13,6 +13,7 @@ namespace Component.Data
     {
         public static GameObject Create(CollectibleTemplate collectibleTemplate)
         {
+            //Debug.Log("Instantiation collectible prefab");
             GameObject collectible = Object.Instantiate(collectibleTemplate.CollectiblePrefab);
 
             return collectible;

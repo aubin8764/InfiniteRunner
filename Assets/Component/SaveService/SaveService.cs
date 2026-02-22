@@ -11,7 +11,7 @@ public static class SaveService
     {
         string json = JsonUtility.ToJson(saveData);
         File.WriteAllText(FilePath, json);
-        Debug.Log("Player data saved at " + FilePath);
+        //Debug.Log("Player data saved at " + FilePath);
     }
 
     public static bool TryLoad(out SaveData saveData)
@@ -24,14 +24,14 @@ public static class SaveService
         }
         catch(Exception e)
         {
-            Debug.LogError("Unable to read save file. Details: " + e);
+            //Debug.LogError("Unable to read save file. Details: " + e);
             saveData = null;
             return false;
         }
 
         if(string.IsNullOrEmpty(json))
         {
-            Debug.LogError("No save data found at path : " +  FilePath);
+            //Debug.LogError("No save data found at path : " +  FilePath);
 
             saveData = null;
             return false;

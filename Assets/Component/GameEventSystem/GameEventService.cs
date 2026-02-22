@@ -23,6 +23,8 @@ public static class GameEventService
     public static Action<float> OnTimeScoreUpdated;
     public static Action<float> OnSpeedUpdated;
 
+    public static Action<Material> OnChunkMaterialChanged;
+
     #endregion
 
     public static Action<int> OnScoreUpdated;
