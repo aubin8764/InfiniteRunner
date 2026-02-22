@@ -19,6 +19,6 @@ MonoBehaviour:
   _chunkMaterials:
   - {fileID: 2100000, guid: 6af89e0ec5dae7940874d3a04ae625dc, type: 2}
   _cristalTemplate: {fileID: 11400000, guid: a6db8cd42e95e1d46a701b378bfb368f, type: 2}
-  _cristalSpawnChance: 99
+  _cristalSpawnChance: 40
   _energySphereTemplate: {fileID: 11400000, guid: b308fafd0e558cc4e99d35941466cda6, type: 2}
-  _energySphereSpawnChance: 99
+  _energySphereSpawnChance: 5

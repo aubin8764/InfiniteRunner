@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4cf3369e4a6304b937f7e23654e42f, type: 3}
   m_Name: CristalBlue
   m_EditorClassIdentifier: Assembly-CSharp::Component.Data.CollectibleTemplate
-  _collectiblePrefab: {fileID: 6892495220587047480, guid: 8666e7c9fd5dd3e48a40db8650882bab, type: 3}
+  _collectiblePrefab: {fileID: 6141635852581222579, guid: cb671432a746e514b97a2e81924b0b6e, type: 3}
